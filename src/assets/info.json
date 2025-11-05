@@ -1,0 +1,101 @@
+{
+    "personal_info": {
+        "firstnames": "Roosevelt Stalin",
+        "lastnames": "Remache Abrigo",
+        "fullname": "Roosevelt Stalin Remache Abrigo",
+        "email": "rooseveltabrigo@gmail.com",
+        "phone": "+593 989 818 716",
+        "location": {
+            "city": "Guayaquil",
+            "country": "Ecuador"
+        },
+        "social_links": [
+            {
+                "name": "GitHub",
+                "url": "https://github.com/AnsExp"
+            },
+            {
+                "name": "LinkedIn",
+                "url": "https://www.linkedin.com/in/roosevelt-remache-abrigo-5888b9293/"
+            }
+        ]
+    },
+    "roles": [
+        "Full Stack Developer",
+        "Graphic Designer"
+    ],
+    "about_me": "Passionate Full Stack Developer and Graphic Designer with a knack for creating dynamic web applications and compelling visual content. Experienced in both front-end and back-end development, as well as graphic design principles. Adept at collaborating with cross-functional teams to deliver high-quality projects on time.",
+    "skills": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Express",
+        "MySQL",
+        "Adobe Photoshop",
+        "Adobe Illustrator"
+    ],
+    "education": [
+        {
+            "degree": "Educación General Básica",
+            "institution": "Escuela de Educación Básica Juan Pablo XXIII",
+            "year": "2005 - 2013"
+        },
+        {
+            "degree": "Educación Media",
+            "institution": "Colegio Municipal Monseñor Leonidas Proaño",
+            "year": "2013 - 2017"
+        },
+        {
+            "degree": "Bachillerato en Ciencias",
+            "institution": "Colegio Fiscal Remigio Geo Gomez Guerrero",
+            "year": "2017 - 2018"
+        },
+        {
+            "degree": "Tecnólogo en Diseño Gráfico",
+            "institution": "Instituto Superior Tecnológico Guayaquil",
+            "year": "2018 - 2020"
+        },
+        {
+            "degree": "Ingeniero en Software",
+            "institution": "Universidad Estatal de Guayaquil",
+            "year": "2021 - Presente"
+        }
+    ],
+    "experience": [
+        {
+            "position": "Full Stack Developer",
+            "company": "Tech Solutions Inc.",
+            "duration": "Jan 2020 - Present",
+            "responsibilities": [
+                "Developed and maintained web applications using React and Node.js.",
+                "Collaborated with designers to implement responsive UI/UX designs.",
+                "Optimized application performance and scalability."
+            ]
+        },
+        {
+            "position": "Graphic Designer",
+            "company": "Creative Designs Co.",
+            "duration": "Jun 2017 - Dec 2019",
+            "responsibilities": [
+                "Created visual content for marketing campaigns and social media.",
+                "Worked closely with clients to understand their design needs.",
+                "Managed multiple projects simultaneously while meeting deadlines."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Portfolio Website",
+            "description": "A personal portfolio website to showcase my projects and skills.",
+            "technologies": ["React", "CSS3", "JavaScript"],
+            "link": "https://rooseveltabrigo.github.io/portfolio"
+        },
+        {
+            "name": "E-commerce Platform",
+            "description": "Developed a full-featured e-commerce platform for local businesses.",
+            "technologies": ["Node.js", "Express", "MySQL"],
+            "link": "https://rooseveltabrigo.github.io/e-commerce-platform"
+        }
+    ]
+}

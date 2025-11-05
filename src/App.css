@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Outfit:wght@100..900&display=swap');
+
+* {
+  font-family: 'Outfit', sans-serif;
+}
+
+.title-name {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 80%;
+}
+
+.header-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.header-nav a {
+  text-decoration-line: none;
+}
+
+.header-nav a.active {
+  text-decoration-line: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+
+.header-nav a:hover {
+  opacity: 0.75;
+}
+
+.text {
+  font-family: 'Literata', serif;
+}

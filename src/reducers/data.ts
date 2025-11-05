@@ -22,7 +22,7 @@ export interface PortfolioData {
     education: {
         degree: string;
         institution: string;
-        year: number;
+        year: string;
     }[];
     experience: {
         position: string;

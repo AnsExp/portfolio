@@ -7,45 +7,11 @@ import { portfolio } from "../reducers/data";
 const HomePage = () => {
 
     const handleDownloadPDF = () => {
-
-        /* 📄 Método 2: Generar PDF dinámicamente (requiere: npm install jspdf)
-        const doc = new jsPDF();
-        
-        // Información personal
-        doc.setFontSize(20);
-        doc.text(`${portfolio.personal_info.firstnames} ${portfolio.personal_info.lastnames}`, 20, 30);
-        
-        doc.setFontSize(14);
-        doc.text(portfolio.roles.join(' + '), 20, 45);
-        
-        // Contacto
-        doc.setFontSize(12);
-        doc.text(`Email: ${portfolio.personal_info.email}`, 20, 60);
-        doc.text(`Phone: ${portfolio.personal_info.phone}`, 20, 70);
-        doc.text(`Location: ${portfolio.personal_info.location.city}, ${portfolio.personal_info.location.country}`, 20, 80);
-        
-        // About Me
-        doc.setFontSize(16);
-        doc.text('About Me', 20, 100);
-        doc.setFontSize(11);
-        const aboutLines = doc.splitTextToSize(portfolio.about_me, 170);
-        doc.text(aboutLines, 20, 110);
-        
-        // Skills
-        doc.setFontSize(16);
-        doc.text('Skills', 20, 140);
-        doc.setFontSize(11);
-        const skillsText = portfolio.skills.join(', ');
-        const skillLines = doc.splitTextToSize(skillsText, 170);
-        doc.text(skillLines, 20, 150);
-        
-        // Descargar
-        doc.save('Roosevelt_Remache_CV.pdf');
-        */
+        console.log(Math.floor(Math.random() * 100) + 1);
     }
 
     return (
-        <div className='container-sm'>
+        <>
             <Header />
             <Container>
                 <h2 className="text-center">Welcome to My Portfolio</h2>
@@ -65,7 +31,7 @@ const HomePage = () => {
                 </div>
             </Container>
             <Footer />
-        </div>
+        </>
     );
 }
 

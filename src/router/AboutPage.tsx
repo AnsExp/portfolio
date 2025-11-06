@@ -48,7 +48,7 @@ const AboutPage = () => {
                     <h3 className="text-center mt-5 mb-3">Education</h3>
                     <Accordion open={openEducation} toggle={toggleEducationHandle}>
                         {portfolio.education.map((edu, index) => (
-                            <AccordionItem>
+                            <AccordionItem key={index}>
                                 <AccordionHeader targetId={index.toString()}>{edu.degree}</AccordionHeader>
                                 <AccordionBody accordionId={index.toString()}>
                                     <p className="text card-subtitle text-muted">{edu.institution}</p>
@@ -62,7 +62,7 @@ const AboutPage = () => {
                     <h3 className="text-center mt-5 mb-3">Experience</h3>
                     <Accordion open={openExperience} toggle={toggleExperienceHandle}>
                         {portfolio.experience.map((exp, index) => (
-                            <AccordionItem>
+                            <AccordionItem key={index}>
                                 <AccordionHeader targetId={index.toString()}>{exp.position}</AccordionHeader>
                                 <AccordionBody accordionId={index.toString()}>
                                     <p className="text card-subtitle text-muted">{exp.company}</p>

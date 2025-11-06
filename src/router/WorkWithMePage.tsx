@@ -8,7 +8,7 @@ const WorkWithMePage = () => {
     const portfolio = DataService.getInstance().getAllData();
 
     return (
-        <div className='container-sm'>
+        <>
             <Header />
             <Container>
                 <h3 className="text-center">We Talk?</h3>
@@ -32,7 +32,7 @@ const WorkWithMePage = () => {
                 </p>
             </Container>
             <Footer />
-        </div>
+        </>
     );
 }
 

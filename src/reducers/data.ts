@@ -1,5 +1,13 @@
 import portfolio from '../assets/info.json';
 
+export interface PortfolioDataProject {
+    name: string;
+    description_short: string;
+    description_long: string;
+    technologies: string[];
+    link: string;
+}
+
 export interface PortfolioData {
     personal_info: {
         firstnames: string;
@@ -30,12 +38,7 @@ export interface PortfolioData {
         duration: string;
         responsibilities: string[];
     }[];
-    projects?: {
-        name: string;
-        description: string;
-        technologies: string[];
-        link: string;
-    }[];
+    projects?: PortfolioDataProject[];
 }
 
 export class DataService {

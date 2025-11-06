@@ -86,16 +86,85 @@
     ],
     "projects": [
         {
-            "name": "Portfolio Website",
-            "description": "A personal portfolio website to showcase my projects and skills.",
-            "technologies": ["React", "CSS3", "JavaScript"],
+            "name": "Notepad",
+            "description_short": "Un blog de notas funcional que replica el clásico de Windows 10.",
+            "description_long": "Notepad es una aplicación de notas desarrollada íntegramente en Java, con interfaz construida en Java Swing. Su diseño y funcionalidades replican fielmente el comportamiento del bloc de notas de Windows 10, ofreciendo una experiencia simple, directa y familiar para organizar ideas.",
+            "technologies": [
+                "Java",
+                "Java Swing"
+            ],
             "link": "https://rooseveltabrigo.github.io/portfolio"
         },
         {
-            "name": "E-commerce Platform",
-            "description": "Developed a full-featured e-commerce platform for local businesses.",
-            "technologies": ["Node.js", "Express", "MySQL"],
-            "link": "https://rooseveltabrigo.github.io/e-commerce-platform"
+            "name": "Sistema de Nómina",
+            "description_short": "Registro de empleados con control de entradas y salidas.",
+            "description_long": "Sistema de nómina desarrollado en C# utilizando su soporte nativo para interfaces gráficas. Permite registrar entradas y salidas de empleados, junto con un resumen personal de cada uno. Se conecta a una base de datos propia en SQL Server. Aunque es un sistema de prueba, está diseñado para ser expandido, incluyendo eventualmente soporte biométrico.",
+            "technologies": [
+                "C#",
+                "SQL Server",
+                "Windows Forms"
+            ],
+            "link": "https://rooseveltabrigo.github.io/portfolio"
+        },
+        {
+            "name": "Sistema de Matriculación Universitario",
+            "description_short": "Gestión de matrículas con control de cupos y roles de usuario.",
+            "description_long": "Sistema de matriculación desarrollado en C# y .NET, con base de datos MySQL. Permite a los usuarios iniciar sesión, visualizar opciones según su rol (estudiante, administrador, etc.) y matricularse en aulas con cupo limitado. El sistema gestiona la disponibilidad de espacios y está diseñado para escalar con nuevas funcionalidades.",
+            "technologies": [
+                "C#",
+                ".NET",
+                "MySQL"
+            ],
+            "link": "https://rooseveltabrigo.github.io/portfolio"
+        },
+        {
+            "name": "Sistema de Punto de Cobro",
+            "description_short": "Gestión de deudores y control de morosidad.",
+            "description_long": "Sistema de punto de cobro desarrollado en Java con interfaz gráfica construida en Swing. Permite registrar deudores, controlar pagos pendientes y gestionar la morosidad. El sistema administra planes de préstamos y pagos, ofreciendo al usuario una visión clara de quién ha pagado y quién no. Fue concebido como un prototipo funcional con posibilidad de expansión.",
+            "technologies": [
+                "Java",
+                "Java Swing"
+            ],
+            "link": "https://rooseveltabrigo.github.io/portfolio"
+        },
+        {
+            "name": "Sistema de Inventario para Tienda Musical",
+            "description_short": "Gestión de productos, escasez y facturación en tienda de instrumentos musicales.",
+            "description_long": "Aplicación desarrollada en TypeScript con React, orientada a la gestión de inventario en una tienda de instrumentos musicales. Permite al dueño visualizar productos disponibles en estanterías y bodegas, personalizar umbrales de escasez y emitir facturas en formato PDF. La base de datos MySQL se conecta mediante una API construida en JavaScript con Express, facilitando una arquitectura modular y escalable.",
+            "technologies": [
+                "TypeScript",
+                "React",
+                "JavaScript",
+                "Express",
+                "MySQL"
+            ],
+            "link": "https://rooseveltabrigo.github.io/portfolio"
+        },
+        {
+            "name": "Sistema de Inventario para Restaurante",
+            "description_short": "Gestión de productos, escasez y facturación en restaurante.",
+            "description_long": "Aplicación desarrollada en TypeScript con React, orientada a la gestión de inventario en un restaurante. Permite al administrador visualizar productos disponibles en cocina y bodegas, personalizar umbrales de escasez y emitir facturas en formato PDF. La base de datos MySQL se conecta mediante una API construida en JavaScript con Express, facilitando una arquitectura modular y escalable.",
+            "technologies": [
+                "TypeScript",
+                "React",
+                "JavaScript",
+                "Express",
+                "MySQL"
+            ],
+            "link": "https://rooseveltabrigo.github.io/portfolio"
+        },
+        {
+            "name": "Sistema de Venta de Tickets",
+            "description_short": "Venta y gestión de tickets con interfaz moderna en Angular.",
+            "description_long": "Sistema de venta de tickets desarrollado en Angular, orientado a la gestión de eventos y control de disponibilidad. Permite registrar usuarios, emitir tickets y llevar seguimiento de ventas. La base de datos MySQL se conecta mediante una API construida en JavaScript con Express, lo que facilita una arquitectura modular y escalable. Ideal como base para plataformas de eventos con integración futura de pasarelas de pago y validación de acceso.",
+            "technologies": [
+                "Angular",
+                "TypeScript",
+                "JavaScript",
+                "Express",
+                "MySQL"
+            ],
+            "link": "https://rooseveltabrigo.github.io/portfolio"
         }
     ]
 }

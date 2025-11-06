@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/portfolio/public/profile-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio</title>
+    <script>
+      // GitHub Pages SPA fallback script
+      // Esto redirecciona todas las rutas 404 al index.html
+      const path = window.location.pathname.slice(1);
+      const base = '/portfolio/';
+      if (path && path !== 'portfolio') {
+        window.location.replace(
+          window.location.protocol + '//' + window.location.hostname + base + '#' + path
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

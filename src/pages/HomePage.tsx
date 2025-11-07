@@ -14,10 +14,9 @@ const HomePage = () => {
         <>
             <Header />
             <Container>
-                <h2 className="text-center">Welcome to My Portfolio</h2>
-                <p className="text-center text">Explore my projects, skills, and experience.</p>
+                <h2 className="text-center">Bienvenido a Mi Portafolio</h2>
+                <p className="text-center text">Explora mis proyectos, habilidades y experiencia.</p>
                 <hr />
-                <h3 className="text-center">Skills</h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                     {
                         portfolio.skills.map((skill, index) => (
@@ -27,7 +26,7 @@ const HomePage = () => {
                 </div>
                 <hr />
                 <div className="d-flex justify-content-center">
-                    <button className="btn btn-primary" onClick={handleDownloadPDF}>Download PDF</button>
+                    <button className="btn btn-primary" onClick={handleDownloadPDF}>Descargar PDF</button>
                 </div>
             </Container>
             <Footer />

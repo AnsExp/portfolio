@@ -28,16 +28,16 @@ function Header() {
                 <nav className="main-nav" data-content-field="navigation">
                     <ul className='justify-content-center'>
                         <li className="page-collection">
-                            <a className={'text' + (location.pathname === '/' ? ' active' : '')} href="/">Home</a>
+                            <a className={'text' + (location.pathname === '/' ? ' active' : '')} href="/">Inicio</a>
                         </li>
                         <li className="page-collection">
-                            <a className={'text' + (location.pathname === '/about' ? ' active' : '')} href="/about">About</a>
+                            <a className={'text' + (location.pathname === '/about' ? ' active' : '')} href="/about">Acerca de</a>
                         </li>
                         <li className="page-collection">
-                            <a className={'text' + (location.pathname === '/projects' ? ' active' : '')} href="/projects">Projects</a>
+                            <a className={'text' + (location.pathname === '/projects' ? ' active' : '')} href="/projects">Proyectos</a>
                         </li>
                         <li className="page-collection">
-                            <a className={'text' + (location.pathname === '/work-with-me' ? ' active' : '')} href="/work-with-me">Work With Me</a>
+                            <a className={'text' + (location.pathname === '/work-with-me' ? ' active' : '')} href="/work-with-me">Trabaja Conmigo</a>
                         </li>
                     </ul>
                 </nav>

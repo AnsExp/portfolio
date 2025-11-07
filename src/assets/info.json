@@ -21,17 +21,19 @@
         ]
     },
     "roles": [
-        "Full Stack Developer",
-        "Graphic Designer"
+        "Desarrollador Full Stack",
+        "Diseñador Gráfico"
     ],
     "about_me": "Passionate Full Stack Developer and Graphic Designer with a knack for creating dynamic web applications and compelling visual content. Experienced in both front-end and back-end development, as well as graphic design principles. Adept at collaborating with cross-functional teams to deliver high-quality projects on time.",
     "skills": [
         "JavaScript",
         "TypeScript",
+        "Angular",
         "React",
         "Node.js",
         "Express",
         "MySQL",
+        "Adobe InDesign",
         "Adobe Photoshop",
         "Adobe Illustrator"
     ],
@@ -64,16 +66,6 @@
     ],
     "experience": [
         {
-            "position": "Full Stack Developer",
-            "company": "Tech Solutions Inc.",
-            "duration": "Jan 2020 - Present",
-            "responsibilities": [
-                "Developed and maintained web applications using React and Node.js.",
-                "Collaborated with designers to implement responsive UI/UX designs.",
-                "Optimized application performance and scalability."
-            ]
-        },
-        {
             "position": "Graphic Designer",
             "company": "Creative Designs Co.",
             "duration": "Jun 2017 - Dec 2019",
@@ -81,6 +73,16 @@
                 "Created visual content for marketing campaigns and social media.",
                 "Worked closely with clients to understand their design needs.",
                 "Managed multiple projects simultaneously while meeting deadlines."
+            ]
+        },
+        {
+            "position": "Full Stack Developer",
+            "company": "Tech Solutions Inc.",
+            "duration": "Jan 2020 - Present",
+            "responsibilities": [
+                "Developed and maintained web applications using React and Node.js.",
+                "Collaborated with designers to implement responsive UI/UX designs.",
+                "Optimized application performance and scalability."
             ]
         }
     ],

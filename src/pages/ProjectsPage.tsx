@@ -10,7 +10,6 @@ const ProjectsPage = () => {
     const [currentProject, setCurrentProject] = useState<PortfolioDataProject | null>(null);
     const buttonHandleClick = (project: PortfolioDataProject) => {
         setCurrentProject(project);
-        console.log(project);
     }
     return (
         <>

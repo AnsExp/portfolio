@@ -3,30 +3,23 @@ import Header from "../components/Header";
 import { DataService } from "../reducers/data";
 import photo from '../../public/img/photo-profile.jpg';
 import Container from "../components/Container";
-import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from "reactstrap";
-import { useState } from "react";
+// import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from "reactstrap";
+// import { useState } from "react";
+import Timeline from "../components/TimeLine";
+import TimelineItem from "../components/TimelineItem";
 
 const AboutPage = () => {
 
     const portfolio = DataService.getInstance().getAllData();
-    const [openEducation, setOpenEducation] = useState<string[]>([]);
-    const [openExperience, setOpenExperience] = useState<string[]>([]);
+    // const [openExperience, setOpenExperience] = useState<string[]>([]);
 
-    const toggleEducationHandle = (id: string) => {
-        if (openEducation.includes(id)) {
-            setOpenEducation(openEducation.filter(item => item !== id));
-        } else {
-            setOpenEducation([...openEducation, id]);
-        }
-    };
-
-    const toggleExperienceHandle = (id: string) => {
-        if (openExperience.includes(id)) {
-            setOpenExperience(openExperience.filter(item => item !== id));
-        } else {
-            setOpenExperience([...openExperience, id]);
-        }
-    };
+    // const toggleExperienceHandle = (id: string) => {
+    //     if (openExperience.includes(id)) {
+    //         setOpenExperience(openExperience.filter(item => item !== id));
+    //     } else {
+    //         setOpenExperience([...openExperience, id]);
+    //     }
+    // };
 
     return (
         <div>
@@ -46,37 +39,41 @@ const AboutPage = () => {
                 </div>
                 <div>
                     <h3 className="text-center mt-5 mb-3">Education</h3>
-                    <Accordion open={openEducation} toggle={toggleEducationHandle}>
-                        {portfolio.education.map((edu, index) => (
-                            <AccordionItem key={index}>
-                                <AccordionHeader targetId={index.toString()}>{edu.degree}</AccordionHeader>
-                                <AccordionBody accordionId={index.toString()}>
-                                    <p className="text card-subtitle text-muted">{edu.institution}</p>
-                                    <small className="text card-subtitle mb-2 text-muted">{<i className="bi bi-calendar"></i>} — {edu.year}</small>
-                                </AccordionBody>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
+                    <Timeline>
+                        {
+                            portfolio.education.map((edu, index) => (
+                                <TimelineItem key={index} title={edu.degree} date={edu.year} description={edu.institution} />
+                            ))
+                        }
+                    </Timeline>
                 </div>
                 <div>
                     <h3 className="text-center mt-5 mb-3">Experience</h3>
-                    <Accordion open={openExperience} toggle={toggleExperienceHandle}>
-                        {portfolio.experience.map((exp, index) => (
-                            <AccordionItem key={index}>
-                                <AccordionHeader targetId={index.toString()}>{exp.position}</AccordionHeader>
-                                <AccordionBody accordionId={index.toString()}>
-                                    <p className="text card-subtitle text-muted">{exp.company}</p>
-                                    <small className="text card-subtitle mb-2 text-muted">{<i className="bi bi-calendar"></i>} — {exp.duration}</small>
-                                    <p>Responsibilities:</p>
-                                    <ul className="list-unstyled">
-                                        {exp.responsibilities.map((resp, index) => (
-                                            <li key={index} className="text text-muted"><i className="bi bi-check-circle"></i> {resp}</li>
-                                        ))}
-                                    </ul>
-                                </AccordionBody>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
+                    <Timeline>
+                        {
+                            portfolio.experience.map((edu, index) => {
+                                let descriptionElement = (
+                                    <>
+                                        <p className="text-muted my-0">
+                                            {edu.company}
+                                        </p>
+                                        <ul>
+                                            {edu.responsibilities.map((resp, idx) => (
+                                                <li key={idx} className="text text-muted">
+                                                    <small>
+                                                        {resp}
+                                                    </small>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                );
+                                return (
+                                    <TimelineItem key={index} title={edu.position} date={edu.duration} description={descriptionElement} />
+                                )
+                            })
+                        }
+                    </Timeline>
                 </div>
             </Container>
             <Footer />

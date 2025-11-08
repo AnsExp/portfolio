@@ -1,25 +1,14 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { DataService } from "../reducers/data";
-import photo from '../../public/img/photo-profile.jpg';
+import photo from '../img/photo-profile.jpg';
 import Container from "../components/Container";
-// import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from "reactstrap";
-// import { useState } from "react";
-import Timeline from "../components/TimeLine";
+import Timeline from "../components/Timeline";
 import TimelineItem from "../components/TimelineItem";
 
 const AboutPage = () => {
 
     const portfolio = DataService.getInstance().getAllData();
-    // const [openExperience, setOpenExperience] = useState<string[]>([]);
-
-    // const toggleExperienceHandle = (id: string) => {
-    //     if (openExperience.includes(id)) {
-    //         setOpenExperience(openExperience.filter(item => item !== id));
-    //     } else {
-    //         setOpenExperience([...openExperience, id]);
-    //     }
-    // };
 
     return (
         <div>

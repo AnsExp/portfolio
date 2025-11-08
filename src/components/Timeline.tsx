@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import type { TimelineItemProps } from './TimelineItem';
-import "../../public/css/timeline.css";
+import "../css/timeline.css";
 
 interface TimelineProps {
     children: ReactElement<TimelineItemProps> | ReactElement<TimelineItemProps>[];

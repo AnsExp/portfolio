@@ -1,22 +1,25 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/portfolio/src/svg/profile-icon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio</title>
-  <script>
-    // GitHub Pages SPA fallback
-    const path = window.location.pathname.slice(1);
-    const base = '/portfolio/';
-    if (path && path !== 'portfolio') {
-      window.location.replace(
-        window.location.protocol + '//' + window.location.hostname + base + '#/' + path
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // This script takes the current url and converts the path and query
+      // string into just a query string, and then redirects the browser
+      // to the new url with only a query string and hash fragment
+      var pathSegmentsToKeep = 1;
+
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
       );
-    }
-  </script>
-</head>
-<body>
-  <div id="root"></div>
-</body>
+    </script>
+  </head>
+  <body>
+  </body>
 </html>

@@ -3,11 +3,24 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/portfolio/assets/profile-icon-CCesyRav.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/profile-icon-CCesyRav.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portafolio</title>
-  <script type="module" crossorigin src="/portfolio/assets/index-D2U0rUFa.js"></script>
-  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BuhZ1Vbe.css">
+  <script>
+    // Start single page app redirect script for GitHub Pages
+    (function (l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function (s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+  <script type="module" crossorigin src="/assets/index-CbIQm5sp.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D1KStxoV.css">
 </head>
 
 <body>

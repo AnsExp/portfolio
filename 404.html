@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/portfolio/src/svg/profile-icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio</title>
+  <script>
+    // GitHub Pages SPA fallback
+    const path = window.location.pathname.slice(1);
+    const base = '/portfolio/';
+    if (path && path !== 'portfolio') {
+      window.location.replace(
+        window.location.protocol + '//' + window.location.hostname + base + '#/' + path
+      );
+    }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>

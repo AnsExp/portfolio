@@ -9,9 +9,9 @@ import ProjectsPage from './pages/ProjectsPage.tsx';
 import WorkWithMePage from './pages/WorkWithMePage.tsx';
 import React from 'react';
 
-createRoot(document.getElementById('page-container')!).render(
+createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />

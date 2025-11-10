@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { DataService } from '../reducers/data';
 
 function Header() {
@@ -28,16 +28,16 @@ function Header() {
                 <nav className="main-nav" data-content-field="navigation">
                     <ul className='justify-content-center'>
                         <li className="page-collection">
-                            <a className={'text' + (location.pathname === '/' ? ' active' : '')} href="/">Inicio</a>
+                            <Link className={'text' + (location.pathname === '/' ? ' active' : '')} to="/">Inicio</Link>
                         </li>
                         <li className="page-collection">
-                            <a className={'text' + (location.pathname === '/about' ? ' active' : '')} href="/about">Acerca de</a>
+                            <Link className={'text' + (location.pathname === '/about' ? ' active' : '')} to="/about">Acerca de</Link>
                         </li>
                         <li className="page-collection">
-                            <a className={'text' + (location.pathname === '/projects' ? ' active' : '')} href="/projects">Proyectos</a>
+                            <Link className={'text' + (location.pathname === '/projects' ? ' active' : '')} to="/projects">Proyectos</Link>
                         </li>
                         <li className="page-collection">
-                            <a className={'text' + (location.pathname === '/work-with-me' ? ' active' : '')} href="/work-with-me">Trabaja Conmigo</a>
+                            <Link className={'text' + (location.pathname === '/work-with-me' ? ' active' : '')} to="/work-with-me">Trabaja Conmigo</Link>
                         </li>
                     </ul>
                 </nav>

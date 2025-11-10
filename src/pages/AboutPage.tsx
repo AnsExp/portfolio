@@ -15,10 +15,10 @@ const AboutPage = () => {
             <Header />
             <Container>
                 <div className="row">
-                    <div className="col">
+                    <div className="col-12 col-md-6 order-1 order-md-1">
                         <img className="w-100" src={photo} alt={portfolio.personal_info.firstnames} />
                     </div>
-                    <div className="col">
+                    <div className="col-12 col-md-6 order-2 order-md-2">
                         <div className="p-3">
                             <h2 className="text">Hi, I'm <span className="text text-primary">{portfolio.personal_info.firstnames}</span></h2>
                             <hr />

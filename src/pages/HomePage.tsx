@@ -2,12 +2,13 @@ import Container from "../components/Container";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { portfolio } from "../reducers/data";
-// import jsPDF from 'jspdf'; // Instalar: npm install jspdf @types/jspdf
+import { create } from "../reducers/pdf_creator";
 
 const HomePage = () => {
 
     const handleDownloadPDF = () => {
-        console.log(Math.floor(Math.random() * 100) + 1);
+        const doc = create();
+        doc.save('Roosevelt Remache.pdf');
     }
 
     return (

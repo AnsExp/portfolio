@@ -1,23 +1,24 @@
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage.tsx';
-import AboutPage from './pages/AboutPage.tsx';
-import ProjectsPage from './pages/ProjectsPage.tsx';
-import WorkWithMePage from './pages/WorkWithMePage.tsx';
+import './App.css';
 import React from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import CustomCursor from './components/CustomCursor';
+import ProjectsPage from './pages/ProjectsPage';
+import ContactPage from './pages/ContactPage';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter basename="/portfolio">
+    <CustomCursor />
+    <BrowserRouter basename='portfolio/'>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/work-with-me" element={<WorkWithMePage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode >
 )

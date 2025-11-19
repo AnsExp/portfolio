@@ -1,48 +1,23 @@
-import { useLocation, Link } from 'react-router-dom';
-import { DataService } from '../reducers/data';
+import Navigation from './Navigation';
 
 function Header() {
-
-    const portfolio = DataService.getInstance().getAllData();
-    const location = useLocation();
-
     return (
-        <header className='text-center p-5'>
-            <div className="my-5">
-                <h2 className='title-name'>{portfolio.personal_info.firstnames.toUpperCase()}</h2>
-                <h2 className='title-name'>{portfolio.personal_info.lastnames.toUpperCase()}</h2>
+        <>
+            <h1 className='page-title'>Roosevelt Stalin<br />Remache Abrigo</h1>
+            <div className="py-5">
+                <p className='fs-3 role-title'>Desarrollador Fullstack</p>
+                <p className='fs-3 role-title'>Diseñador Gráfico</p>
             </div>
-            <div className="mb-4">
-                {
-                    portfolio.roles.map((role, index) => (
-                        <span key={index} className='title-role'>
-                            {
-                                index > 0 && <span className='text-primary'>+</span>
-                            }
-                            <span key={index} className='text-secondary mx-3'>{role}</span>
-                        </span>
-                    ))
-                }
+            <Navigation />
+            <div className="py-5">
+                <a href="https://github.com/AnsExp" className="fs-3 text-light me-4">
+                    <i className="bi bi-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/roosevelt-remache-abrigo-5888b9293/" className="fs-3 text-light">
+                    <i className="bi bi-linkedin"></i>
+                </a>
             </div>
-            <div className="header-nav" role="navigation">
-                <nav className="main-nav" data-content-field="navigation">
-                    <ul className='justify-content-center'>
-                        <li className="page-collection">
-                            <Link className={'text' + (location.pathname === '/' ? ' active' : '')} to="/">Inicio</Link>
-                        </li>
-                        <li className="page-collection">
-                            <Link className={'text' + (location.pathname === '/about' ? ' active' : '')} to="/about">Acerca de</Link>
-                        </li>
-                        <li className="page-collection">
-                            <Link className={'text' + (location.pathname === '/projects' ? ' active' : '')} to="/projects">Proyectos</Link>
-                        </li>
-                        <li className="page-collection">
-                            <Link className={'text' + (location.pathname === '/work-with-me' ? ' active' : '')} to="/work-with-me">Trabaja Conmigo</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header >
+        </>
     );
 }
 

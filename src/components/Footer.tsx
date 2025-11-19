@@ -6,7 +6,7 @@ function Footer() {
 
     return (
         <footer className='text-center p-4 mt-5'>
-            <h5>Where I'm?</h5>
+            <h5>¿Dónde puedes encontrarme?</h5>
             <div className="header-nav my-2" role="navigation">
                 <nav className="main-nav" data-content-field="navigation">
                     <ul className='justify-content-center'>

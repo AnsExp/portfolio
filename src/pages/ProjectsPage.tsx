@@ -1,56 +1,57 @@
-import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Container from "../components/Container";
-import dataService, { type PortfolioDataProject } from "../reducers/data";
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
-import { useState } from "react";
+import dataService from "../reducers/data";
 
 const ProjectsPage = () => {
-    const projects = dataService.getAllData().projects;
-    const [currentProject, setCurrentProject] = useState<PortfolioDataProject | null>(null);
-    const buttonHandleClick = (project: PortfolioDataProject) => {
-        setCurrentProject(project);
-    }
+    const data = dataService.getAllData();
     return (
-        <>
-            <Header />
-            <Container>
-                <h2 className="text-center">Mis Proyectos</h2>
-                <p className="text-center text">Aquí puedes ver algunos de los proyectos en los que he trabajado.</p>
-                {
-                    projects?.map((project, index) => (
-                        <div key={index} className="card p-3 mb-3">
-                            <h3>{project.name}</h3>
-                            <p>{project.description_short}</p>
-                            <Button type="button" color="primary" onClick={() => buttonHandleClick(project)}>Detalles</Button>
-                        </div>
-                    ))
-                }
-                <Modal isOpen={!!currentProject} toggle={() => setCurrentProject(null)} centered={true}>
-                    <ModalHeader>
-                        {currentProject?.name}
-                    </ModalHeader>
-                    <ModalBody>
-                        <div className="py-2 px-3">
-                            <p>{currentProject?.description_long}</p>
-                            <h5>Tecnologías utilizadas:</h5>
-                            <ul>
-                                {currentProject?.technologies.map((tech, index) => (
-                                    <li key={index}>{tech}</li>
-                                ))}
-                            </ul>
-                            <a href={currentProject?.link} target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-                        </div>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="" onClick={()=> setCurrentProject(null)}>
-                            Cerrar
-                        </Button>
-                    </ModalFooter>
-                </Modal>
-            </Container>
-            <Footer />
-        </>
+        <div className="container page">
+            <div className="row">
+                <div className="col-12 col-lg-6 order-1 order-lg-1">
+                    <Header />
+                </div>
+                <div className="col-12 col-lg-6 py-5 py-lg-0 order-2 order-lg-2">
+                    {
+                        data.projects?.map((project, index) => (
+                            <ProjectItem
+                                key={index}
+                                title={project.name}
+                                description={project.description_long}
+                                tecnologies={project.technologies}
+                                link={project.link}
+                            />
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    );
+}
+
+interface ProjectItemProps {
+    title: string;
+    description: string;
+    tecnologies: string[];
+    link?: string;
+}
+
+const ProjectItem = ({ title, description, tecnologies, link }: ProjectItemProps) => {
+    return (
+        <div className="mb-5">
+            <h3>{title}</h3>
+            <p className="text">{description}</p>
+            <div>
+                {tecnologies.map((tech, index) => (
+                    <span key={index} className="badge bg-secondary me-2">{tech}</span>
+                ))}
+            </div>
+            {link && (
+                <a className="btn btn-outline-light mt-3" href={link} target="_blank" rel="noopener noreferrer">
+                    <small>
+                        Visita el proyecto
+                    </small>
+                </a>
+            )}
+        </div>
     );
 }
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import Header from "../components/Header";
 import '../css/form.css';
 import { sendContactEmail } from "../reducers/contact_email";
 import WhatsAppQR from '../assets/whatsapp-qr.svg';
+import Page from './Page';
 
 const ContactPage = () => {
     const [message, setMessage] = useState<string | null>(null);
@@ -56,65 +56,56 @@ const ContactPage = () => {
         }
     };
     return (
-        <div className="container page">
-            <div className="row">
-                <div className="col-12 col-lg-6 order-1 order-lg-1">
-                    <Header />
+        <Page>
+            {message && (
+                <div className={`alert ${messageType === 'success' ? 'alert-success' : 'alert-danger'} mb-4`} role="alert">
+                    <div className="d-flex align-items-center">
+                        <i className={`bi ${messageType === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'} me-2`}></i>
+                        {message}
+                    </div>
                 </div>
-                <div className="col-12 col-lg-6 py-5 py-lg-0 order-2 order-lg-2">
-                    {/* Mostrar mensaje de estado */}
-                    {message && (
-                        <div className={`alert ${messageType === 'success' ? 'alert-success' : 'alert-danger'} mb-4`} role="alert">
-                            <div className="d-flex align-items-center">
-                                <i className={`bi ${messageType === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'} me-2`}></i>
-                                {message}
-                            </div>
-                        </div>
+            )}
+            <form onSubmit={submitForm}>
+                <div className="mb-3">
+                    <label htmlFor="email-input">Correo *</label>
+                    <input name="email" id="email-input" type="email" className="form-input" required={true} />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="subject-input">Asunto *</label>
+                    <input name="subject" id="subject-input" type="text" className="form-input" required={true} />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="message-input">Mensaje *</label>
+                    <textarea rows={10} name="message" id="message-input" className="form-input" required={true}></textarea>
+                </div>
+                <button type="submit" className="btn btn-light w-100" disabled={isLoading}>
+                    {isLoading ? (
+                        <>
+                            <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                            Enviando...
+                        </>
+                    ) : (
+                        'Enviar'
                     )}
-
-                    <form onSubmit={submitForm}>
-                        <div className="mb-3">
-                            <label htmlFor="email-input">Correo</label>
-                            <input name="email" id="email-input" type="email" className="form-input" required={true} />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="subject-input">Asunto</label>
-                            <input name="subject" id="subject-input" type="text" className="form-input" required={true} />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="message-input">Mensaje</label>
-                            <textarea rows={10} name="message" id="message-input" className="form-input" required={true}></textarea>
-                        </div>
-                        <button type="submit" className="btn btn-light w-100" disabled={isLoading}>
-                            {isLoading ? (
-                                <>
-                                    <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                                    Enviando...
-                                </>
-                            ) : (
-                                'Enviar'
-                            )}
-                        </button>
-                    </form>
-                    <div className="mt-4">
-                        <div className="row g-0">
-                            <div className="col-md-4">
-                                <a href="https://wa.link/bqfm75">
-                                    <img src={WhatsAppQR} className="img-fluid rounded" alt='Código QR de WhatsApp' />
-                                </a>
-                            </div>
-                            <div className="col-md-8">
-                                <div className="p-3">
-                                    <h5 className="card-title">WhatsApp</h5>
-                                    <hr />
-                                    <p className="card-text text"><b>Escanea</b> o <b>haz click</b> en el código QR para contactarme directamente.</p>
-                                </div>
-                            </div>
+                </button>
+            </form>
+            <div className="mt-4">
+                <div className="row g-0">
+                    <div className="col-md-4">
+                        <a href="https://wa.link/bqfm75">
+                            <img src={WhatsAppQR} className="img-fluid rounded" alt='Código QR de WhatsApp' />
+                        </a>
+                    </div>
+                    <div className="col-md-8">
+                        <div className="p-3">
+                            <h5 className="card-title">WhatsApp</h5>
+                            <hr />
+                            <p className="card-text text"><b>Escanea</b> o <b>haz click</b> en el código QR para contactarme directamente.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </Page>
     );
 }
 

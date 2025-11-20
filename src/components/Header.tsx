@@ -1,12 +1,17 @@
+import dataService from '../reducers/data';
 import Navigation from './Navigation';
 
 function Header() {
+    const data = dataService.getAllData();
     return (
         <>
-            <h1 className='page-title'>Roosevelt Stalin<br />Remache Abrigo</h1>
+            <h1 className='page-title'>{data.personal_info.firstnames}<br />{data.personal_info.lastnames}</h1>
             <div className="py-5">
-                <p className='fs-3 role-title'>Desarrollador Fullstack</p>
-                <p className='fs-3 role-title'>Diseñador Gráfico</p>
+                {
+                    data.roles.map((role, index) => (
+                        <p key={index} className='fs-3 role-title'>{role}</p>
+                    ))
+                }
             </div>
             <Navigation />
             <div className="py-5">

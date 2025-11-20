@@ -20,7 +20,7 @@ function Navigation() {
                         Contacto
                     </a>
                 </li>
-                <li className="fs-3">
+                <li className={"fs-3 mb-2" + (location.pathname === "/download" ? " fw-bold ps-4" : "")}>
                     <a href="/portfolio/download">
                         Descargar
                     </a>

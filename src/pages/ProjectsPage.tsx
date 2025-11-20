@@ -1,29 +1,22 @@
-import Header from "../components/Header";
 import dataService from "../reducers/data";
+import Page from "./Page";
 
 const ProjectsPage = () => {
     const data = dataService.getAllData();
     return (
-        <div className="container page">
-            <div className="row">
-                <div className="col-12 col-lg-6 order-1 order-lg-1">
-                    <Header />
-                </div>
-                <div className="col-12 col-lg-6 py-5 py-lg-0 order-2 order-lg-2">
-                    {
-                        data.projects?.map((project, index) => (
-                            <ProjectItem
-                                key={index}
-                                title={project.name}
-                                description={project.description_long}
-                                tecnologies={project.technologies}
-                                link={project.link}
-                            />
-                        ))
-                    }
-                </div>
-            </div>
-        </div>
+        <Page>
+            {
+                data.projects?.map((project, index) => (
+                    <ProjectItem
+                        key={index}
+                        title={project.name}
+                        description={project.description_long}
+                        tecnologies={project.technologies}
+                        link={project.link}
+                    />
+                ))
+            }
+        </Page>
     );
 }
 

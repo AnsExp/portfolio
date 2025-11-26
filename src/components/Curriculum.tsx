@@ -4,7 +4,7 @@ import {
   View,
   Document,
   PDFDownloadLink,
-  PDFViewer,
+  // PDFViewer,
   StyleSheet,
 } from "@react-pdf/renderer";
 import dataService from "../reducers/data";
@@ -14,16 +14,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     color: "#262626",
     fontFamily: "Helvetica",
-    fontSize: "12px",
+    fontSize: 12,
+  },
+  container: {
     padding: "30px 50px",
   },
   header: {
+    backgroundColor: "#437c54ff",
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 20,
+    color: "white",
   },
   title: {
-    fontSize: 24,
+    fontSize: 42,
+    lineHeight: 0.8,
+    fontWeight: "bold",
+    fontFamily: "Helvetica-Bold",
   },
   textBold: {
     fontFamily: "Helvetica-Bold",
@@ -31,27 +38,17 @@ const styles = StyleSheet.create({
   spaceY: {
     display: "flex",
     flexDirection: "column",
-    gap: "2px",
-    marginBottom: 10,
+    gap: "2px"
   },
   billTo: {
     marginBottom: 10,
   },
-  table: {
-    width: "100%",
-    borderColor: "1px solid #f3f4f6",
-    margin: "20px 0",
-  },
-  tableHeader: {
-    backgroundColor: "#e5e5e5",
-  },
-  td: {
-    padding: 6,
-  },
-  totals: {
+  historyItem: {
     display: "flex",
-    alignItems: "flex-end",
-  }
+    justifyContent: "space-between",
+    marginBottom: 5,
+    flexDirection: "row",
+  },
 });
 
 export default function MyDocument() {
@@ -66,14 +63,16 @@ export default function MyDocument() {
   const InvoicePDF = () => (
     <Document>
       <Page size="A4" style={styles.page}>
-        <View style={styles.header}>
+        <View style={[styles.header, styles.container]}>
           <View>
-            <Text style={[styles.title, styles.textBold]}>{data.personal_info.fullname}</Text>
-            <Text>{rolesText}</Text>
+            <Text style={[styles.textBold]}>{rolesText}</Text>
+            <Text style={[styles.title, { marginBottom: 10 }]}>{data.personal_info.fullname}</Text>
+            <Text>{data.personal_info.location.city}, {data.personal_info.location.country} | {data.personal_info.phone}</Text>
+            <Text>{data.personal_info.email} | {data.personal_info.social_links[0].url}</Text>
           </View>
         </View>
 
-        <View style={styles.spaceY}>
+        <View style={[styles.container]}>
           <Text style={[styles.billTo, styles.textBold]}>Sobre mí:</Text>
           {
             data.about_me.split('\n').map((line, index) => (
@@ -82,35 +81,23 @@ export default function MyDocument() {
           }
         </View>
 
-        <View style={styles.spaceY}>
-          <Text style={[styles.billTo, styles.textBold]}>Experiencia:</Text>
-          {
-            data.experience.map((exp, index) => (
-              <View key={index} style={{ marginBottom: 10 }}>
-                <Text style={styles.textBold}>{exp.position} en {exp.company} ({exp.duration})</Text>
-                {exp.responsibilities.map((responsibility, respIndex) => (
-                  <Text key={respIndex} style={{ marginLeft: 10, marginTop: 2 }}>
-                    • {responsibility}
-                  </Text>
-                ))}
-              </View>
-            ))
-          }
-        </View>
-
-        <View style={styles.spaceY}>
+        <View style={styles.container}>
           <Text style={[styles.billTo, styles.textBold]}>Proyectos:</Text>
           {
             data.projects?.map((pro, index) => (
-              <View key={index} style={{ marginBottom: 10 }}>
-                <Text style={styles.textBold}>{pro.name}</Text>
-                <Text>{pro.description_long}</Text>
-                <Text style={styles.textBold}>Tecnologías:</Text>
-                {pro.technologies.map((responsibility, respIndex) => (
-                  <Text key={respIndex} style={{ marginLeft: 10, marginTop: 2 }}>
-                    • {responsibility}
+              <View style={styles.historyItem}>
+                <View key={index} style={{ marginBottom: 10 }}>
+                  <Text style={[styles.textBold, { borderBottom: "1px solid black", marginBottom: 10, paddingBottom: 10 }]}>{pro.name}</Text>
+                  <Text>{pro.description_long}</Text>
+                  <Text style={[styles.textBold, { margin: '10px 0' }]}>Tecnologías:</Text>
+                  <Text style={{ marginLeft: 10, marginTop: 2 }}>
+                    {
+                      pro.technologies.map((responsibility, respIndex) => (
+                        responsibility + (respIndex !== pro.technologies.length - 1 ? ' — ' : '')
+                      ))
+                    }
                   </Text>
-                ))}
+                </View>
               </View>
             ))
           }
